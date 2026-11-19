@@ -43,18 +43,18 @@
     <section><div class="container contact-grid">
       <div>
         <div class="facts">
-          <div class="fact"><span>Phone</span><b><a href="tel:+919876543210">+91 98765 43210</a></b></div>
-          <div class="fact"><span>Email</span><b><a href="mailto:hello@smarttourtravels.com">hello@smarttourtravels.com</a></b></div>
-          <div class="fact"><span>WhatsApp</span><b><a href="https://wa.me/919876543210?text=Hi%20Smart%20Tour%20%26%20Travels%2C%20I%20want%20to%20plan%20a%20trip%20across%20India.">Message the desk</a></b></div>
+          <div class="fact"><span>Phone</span><b><a href="tel:+919613005200">+91 9613005200</a></b></div>
+          <div class="fact"><span>Email</span><b><a href="mailto:2628mca0153@kiet.edu.in">2628mca0153@kiet.edu.in</a></b></div>
+          <div class="fact"><span>WhatsApp</span><b><a href="https://wa.me/919613005200?text=Hi%20Smart%20Tour%20%26%20Travels%2C%20I%20want%20to%20plan%20a%20trip%20across%20India.">Message the desk</a></b></div>
           <div class="fact"><span>Desk</span><b>Pan-India planning</b></div>
         </div>
       </div>
-      <form class="form" action="contact.html" method="get">
+      <form class="form" name="Google_Sheet" action="contact.html" method="get">
         <label class="field"><span>Name</span><input type="text" name="name" placeholder="Your name" autocomplete="name"></label>
         <label class="field"><span>Email</span><input type="email" name="email" placeholder="you@email.com" autocomplete="email"></label>
         <label class="field"><span>Phone number</span><input type="tel" name="phone" placeholder="10-digit mobile" autocomplete="tel"></label>
         <label class="field"><span>Message</span><textarea name="message" placeholder="Month, travellers, and the kind of trip"></textarea></label>
-        <button class="btn btn-primary" type="button">Send message</button>
+        <button class="btn btn-primary" type="submit">Send message</button>
         <p class="form-note">Nothing is sent from this form yet. Use WhatsApp or email for now.</p>
       </form>
     </div></section></main>
@@ -90,13 +90,26 @@
 <li><a href="destinations/uttar-pradesh.html">Uttar Pradesh</a></li>
 <li><a href="destinations/andaman.html">Andaman & Nicobar</a></li>
 <li><a href="destinations/sikkim.html">Sikkim</a></li></ul>
-      <p style="margin-top:14px">+91 98765 43210<br><a href="mailto:hello@smarttourtravels.com">hello@smarttourtravels.com</a></p>
+      <p style="margin-top:14px">+91 9613005200<br><a href="mailto:2628mca0153@kiet.edu.in">2628mca0153@kiet.edu.in</a></p>
     </div>
   </div>
-  <div class="container legal"><span>© 2026 Smart Tour &amp; Travels</span><span>Photographs via Wikimedia Commons.</span></div>
+  <div class="container legal"><span>© 2026 Smart Tour &amp; Travels</span><span>Prashant Singhania, Shashank, Satyam Tiwari.</span></div>
 </footer>
-<a class="wa" href="https://wa.me/919876543210?text=Hi%20Smart%20Tour%20%26%20Travels%2C%20I%20want%20to%20plan%20a%20trip%20across%20India." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a class="wa" href="https://wa.me/919613005200?text=Hi%20Smart%20Tour%20%26%20Travels%2C%20I%20want%20to%20plan%20a%20trip%20across%20India." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.01 3C9.4 3 4.03 8.37 4.03 14.97c0 2.1.55 4.15 1.6 5.95L4 29l8.25-1.58a12 12 0 0 0 3.76.6h.01c6.61 0 11.98-5.37 11.98-11.97C28 8.37 22.62 3 16.01 3zm6.95 16.95c-.29.82-1.7 1.57-2.35 1.67-.6.09-1.36.13-2.2-.14-.5-.16-1.15-.38-1.98-.74-3.48-1.5-5.75-5.01-5.92-5.24-.17-.23-1.4-1.86-1.4-3.55s.89-2.52 1.2-2.86c.32-.34.7-.43.93-.43h.67c.21 0 .5-.08.78.6.29.7 1 2.42 1.08 2.6.09.17.15.38.03.6-.11.23-.17.37-.34.57-.17.2-.35.44-.5.59-.17.17-.34.35-.15.68.2.34.87 1.43 1.86 2.32 1.28 1.14 2.36 1.5 2.7 1.66.34.17.54.14.74-.08.2-.23.85-.99 1.08-1.33.23-.34.46-.28.77-.17.32.11 2.02.95 2.37 1.12.34.17.57.26.66.4.08.14.08.82-.21 1.64z"/></svg>
 </a>
 </body>
+
+<script>
+  //Google Sheet connect code
+var scriptURL = "https://script.google.com/macros/s/AKfycbw1YvG8PmtuJi-hJ6Ggm9sVck_DYnJqTNUA9XcWTR0ciqxNg2n2GpEYIT_0thBMeSpu/exec";
+var form = document.forms['Google_Sheet'];
+form.addEventListener('submit', e => {
+e.preventDefault()
+fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+  .catch(error => console.error('Error!', error.message))
+});
+</script>
+
 </html>
